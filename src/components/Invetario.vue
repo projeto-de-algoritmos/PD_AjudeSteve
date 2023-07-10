@@ -18,7 +18,7 @@
             @dragover.prevent
             @drop="drop(`box_${getIndex(data.nome, index)}`, `bau`)"
           >
-            <img class="img" :src="`/img/icons/${data.img}`" />
+            <img class="img" :src="`/PD_AjudeSteve/img/icons/${data.img}`" />
           </div>
         </template>
       </template>
@@ -104,7 +104,7 @@ export default defineComponent({
       let el = document.getElementById(index);
       let img = el?.querySelector("img");
       if (img !== null) {
-        let name = img?.getAttribute("src")?.split("/")[3];
+        let name = img?.getAttribute("src")?.split("/")[4];
         let element = this.minerios.find((e) => e.img == name) as Minerio;
         this.buffer = element;
       }
@@ -129,7 +129,7 @@ export default defineComponent({
           this.pesoAtual += this.buffer.peso;
           this.valorAtual += this.buffer.valor;
         }
-        el.innerHTML = `<img class="img" src="/img/icons/${this.buffer.img}">`;
+        el.innerHTML = `<img class="img" src="/PD_AjudeSteve/img/icons/${this.buffer.img}">`;
         el2.innerHTML = "";
 
         this.buffer = Object() as Minerio;
@@ -151,7 +151,7 @@ export default defineComponent({
           this.inventario.splice(id, 1);
         }
 
-        el.innerHTML = `<img class="img" src="/img/icons/${this.buffer.img}">`;
+        el.innerHTML = `<img class="img" src="/PD_AjudeSteve/img/icons/${this.buffer.img}">`;
         el2.innerHTML = "";
         this.buffer = Object() as Minerio;
         this.dropKey = "";
