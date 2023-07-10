@@ -1,4 +1,10 @@
 <template>
+  <div>
+    Mochila: {{ pesoAtual }} de {{ pesoMochila }}kg
+    <br />
+    Valor Atual: {{ valorAtual }} | Melhor Valor: {{ melhorValor }}
+  </div>
+  <br />
   <div class="main1">
     <h1>Bau</h1>
     <div class="boxes">
@@ -33,11 +39,14 @@
       ></div>
     </div>
   </div>
+  <br />
+  <button @click="gerarResultado">Gerar Resultado</button>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import data from "@/assets/config";
+import Knapsack from "@/utils/knapsack";
 
 interface Minerio {
   nome: string;
@@ -47,12 +56,22 @@ interface Minerio {
   img: string;
 }
 
+interface FormattedResult {
+  name: string;
+  quantity: number;
+}
+
 export default defineComponent({
   name: "inventorySteve",
   data() {
     return {
+      knapsack: Object() as Knapsack,
       contador: 1,
+      resposta: [] as FormattedResult[],
       pesoMochila: 0,
+      pesoAtual: 0,
+      valorAtual: 0,
+      melhorValor: 0,
       inventario: [] as Minerio[],
       minerios: [] as Minerio[],
       buffer: Object() as Minerio,
@@ -63,6 +82,9 @@ export default defineComponent({
   mounted() {
     this.pesoMochila = data.pesoMochila;
     this.minerios = data.minerios;
+    this.knapsack = new Knapsack(this.minerios, this.pesoMochila);
+    this.melhorValor = this.knapsack.getMelhorResultado();
+    this.resposta = this.knapsack.getMelhorResultadoItens();
   },
   methods: {
     getIndex(nome: string, index: number) {
@@ -96,9 +118,16 @@ export default defineComponent({
         //implementar swap
         return;
       }
+
       if (nome == "inventario") {
         if (this.dropKey == "bau") {
+          if (this.pesoAtual + this.buffer.peso > this.pesoMochila) {
+            alert("Mochila cheia");
+            return;
+          }
           this.inventario.push(this.buffer);
+          this.pesoAtual += this.buffer.peso;
+          this.valorAtual += this.buffer.valor;
         }
         el.innerHTML = `<img class="img" src="/img/icons/${this.buffer.img}">`;
         el2.innerHTML = "";
@@ -116,6 +145,8 @@ export default defineComponent({
         }
 
         if (this.dropKey == "inventario") {
+          this.pesoAtual -= this.buffer.peso;
+          this.valorAtual -= this.buffer.valor;
           let id = this.inventario.findIndex((e) => e.nome == this.buffer.nome);
           this.inventario.splice(id, 1);
         }
@@ -126,6 +157,13 @@ export default defineComponent({
         this.dropKey = "";
         this.empyt = "";
       }
+    },
+    gerarResultado() {
+      let test = "";
+      this.resposta.forEach((e) => {
+        test += `${e.name} x ${e.quantity}\n`;
+      });
+      alert(test);
     },
   },
 });

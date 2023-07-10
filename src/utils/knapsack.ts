@@ -1,6 +1,6 @@
 interface Item {
-  w: number; // Weight
-  b: number; // Value
+  w: number;
+  b: number;
 }
 
 interface KnapsackResult {
@@ -60,16 +60,13 @@ export default class Knapsack {
       keepMatrix = new Array(numItems + 1),
       solutionSet = [];
 
-    // Setup matrices
     for (idxItem = 0; idxItem < numItems + 1; idxItem++) {
       weightMatrix[idxItem] = new Array(capacity + 1);
       keepMatrix[idxItem] = new Array(capacity + 1);
     }
 
-    // Build weightMatrix from [0][0] -> [numItems-1][capacity-1]
     for (idxItem = 0; idxItem <= numItems; idxItem++) {
       for (idxWeight = 0; idxWeight <= capacity; idxWeight++) {
-        // Fill top row and left column with zeros
         if (idxItem === 0 || idxWeight === 0) {
           weightMatrix[idxItem][idxWeight] = 0;
         } else if (items[idxItem - 1].w <= idxWeight) {
