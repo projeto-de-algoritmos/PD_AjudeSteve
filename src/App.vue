@@ -1,30 +1,32 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
   <router-view />
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@font-face {
+  font-family: "MinecraftiaRegular";
+  src: local("MinecraftiaRegular"),
+    url("@/assets/fonts/Minecraftia-Regular.ttf") format("truetype");
 }
 
-nav {
-  padding: 30px;
+:root {
+  --slot-size: 30px;
+  --mobile-slot-size: 20px;
+  --background-color: #8e6144;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+body {
+  background-color: var(--background-color);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.img {
+  width: 100% !important;
+  height: 100% !important;
 }
 </style>
