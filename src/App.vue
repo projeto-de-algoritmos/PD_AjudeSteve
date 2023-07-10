@@ -1,4 +1,8 @@
 <template>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/regras">Regras</router-link>
+  </nav>
   <router-view />
 </template>
 
@@ -23,6 +27,26 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 18px;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #ffffff;
 }
 
 .img {
