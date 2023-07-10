@@ -2,9 +2,7 @@ Tema:
 
 - PD
 
-# Calculadora Karatsuba
-
-
+# Ajude o Stive
 
 ## Alunos
 
@@ -17,7 +15,7 @@ Dupla 06
 
 ## Sobre
 
-...............................
+------------------
 
 ## Screenshots
 
