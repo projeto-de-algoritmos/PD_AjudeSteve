@@ -1,34 +1,49 @@
-# steve_knapsack
+Tema:
 
-## Project setup
-```
-npm install
-```
+- PD
 
-### Compiles and hot-reloads for development
-```
+# Calculadora Karatsuba
+
+
+
+## Alunos
+
+| Matrícula | Aluno                     |
+| ---------- | ------------------------- |
+| 200018060  | Gabriel Ferreira da Silva |
+| 200044567  | Weslley Alves de Barros   |
+
+Dupla 06
+
+## Sobre
+
+...............................
+
+## Screenshots
+
+-------------------
+
+## Instalação
+
+**Linguagem**: Javascript<br />
+**Framework**: VueJS
+
+## Requisitos
+
+**Node versão**: 16<br />
+**NPM**: 8.15
+
+## Uso
+
+Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+
+Passo a passo para rodar o projeto
+
+```bash
+npm i
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+ou acessar pelo [link](https://projeto-de-algoritmos.github.io/PD_AjudeSteve/)
 
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[Video](https://github.com/projeto-de-algoritmos/PD_AjudeSteve/tree/main/assets)
