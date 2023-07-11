@@ -88,4 +88,17 @@ h2 {
 .nota-direita {
   width: 300px;
 }
+
+@media (min-width: 1380px) {
+  .imagens {
+    display: none;
+  }
+
+  .divisoria {
+    color: #ffffff !important;
+    font-weight: bold !important;
+    background-color: #000000 !important;
+    opacity: 0.8;
+  }
+}
 </style>
