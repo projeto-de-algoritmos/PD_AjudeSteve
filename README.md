@@ -2,7 +2,7 @@ Tema:
 
 - PD
 
-# Ajude o Stive
+# Ajude o Steve
 
 ## Alunos
 
@@ -27,12 +27,12 @@ Este projeto, consiste ajudar a Steve, a carregar o máximo de minérios possív
 
 ## Instalação
 
-**Linguagem**: Javascript`<br />`
+**Linguagem**: Javascript `<br />`
 **Framework**: VueJS
 
 ## Requisitos
 
-**Node versão**: 16`<br />`
+**Node versão**: 16 `<br />`
 **NPM**: 8.15
 
 ## Uso
