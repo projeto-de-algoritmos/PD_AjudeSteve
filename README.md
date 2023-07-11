@@ -15,20 +15,24 @@ Dupla 06
 
 ## Sobre
 
-------------------
+Este projeto, consiste ajudar a Steve, a carregar o máximo de minérios possível para seu inventário(mochila), com o melhor aproveitamento para que ele possa vender com sucesso, e fugir de catástrofes. Esse projeto utiliza os conceitos do Algoritmo da Mochila com Porgramação Dinâmica.
+
+---
 
 ## Screenshots
 
--------------------
+![1689033697943](image/README/1689033697943.png)
+
+![1689033720755](image/README/1689033720755.png)---
 
 ## Instalação
 
-**Linguagem**: Javascript<br />
+**Linguagem**: Javascript`<br />`
 **Framework**: VueJS
 
 ## Requisitos
 
-**Node versão**: 16<br />
+**Node versão**: 16`<br />`
 **NPM**: 8.15
 
 ## Uso
