@@ -5,6 +5,46 @@
       <br />
       Valor Atual: {{ valorAtual }} | Melhor Valor: {{ melhorValor }}
       <button class="botao" @click="gerarResultado">Mostrar Resultado</button>
+
+      <div v-if="mostraResultado == 0">
+        <div class="estrutura-ganha">
+          <div class="plano-fundo">
+            <img
+              src="/PD_AjudeSteve/img/Villager.svg"
+              alt="Villager da vitória"
+            />
+            <table class="texto-ganho">
+              <thead>
+                <tr>
+                  <th>Minerio</th>
+                  <th>Quantidade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="r in resposta" :key="r.name">
+                  <td>{{ r.name }}</td>
+                  <td>{{ r.quantity }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="partida-ganha texto-ganho">
+              Esse é o melhor resultado para ganhar o seu
+              <img
+                class="imagem-trigo"
+                src="/PD_AjudeSteve/img/Trigo.svg"
+                alt="Trigo de Troca"
+              />
+              &nbsp; 'Trigo' &nbsp;!
+            </p>
+          </div>
+          <button
+            class="botao-ganhou botao partida-ganha"
+            @click="fecharResultado"
+          >
+            Fechar Aba
+          </button>
+        </div>
+      </div>
     </div>
     <br />
     <div class="main1">
@@ -58,7 +98,10 @@
                 &nbsp; 'Trigo' &nbsp;!
               </p>
             </div>
-            <button class="botao-ganhou partida-ganha" @click="reiniciaPartida">
+            <button
+              class="botao-ganhou botao partida-ganha"
+              @click="reiniciaPartida"
+            >
               Reiniciar Partida!
             </button>
           </div>
@@ -98,11 +141,13 @@ export default defineComponent({
       pesoAtual: 0,
       valorAtual: 0,
       melhorValor: 0,
+      mostraResultado: 1,
       inventario: [] as Minerio[],
       minerios: [] as Minerio[],
       buffer: Object() as Minerio,
       dropKey: "s" as string,
       empyt: "" as string,
+      resultado: [] as FormattedResult[],
     };
   },
   mounted() {
@@ -185,11 +230,10 @@ export default defineComponent({
       }
     },
     gerarResultado() {
-      let test = "";
-      this.resposta.forEach((e) => {
-        test += `${e.name} x ${e.quantity}\n`;
-      });
-      alert(test);
+      this.mostraResultado = 0;
+    },
+    fecharResultado() {
+      this.mostraResultado = 1;
     },
     reiniciaPartida() {
       window.location.reload();
@@ -207,6 +251,12 @@ export default defineComponent({
 
 .botao {
   height: 50px;
+}
+
+table {
+  font-size: 7pt;
+  font-weight: 700;
+  margin-right: 3px;
 }
 
 .botao-ganhou {
