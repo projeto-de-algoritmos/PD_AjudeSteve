@@ -15,7 +15,7 @@ export default defineComponent({
   name: "MusicPlayer",
   data() {
     return {
-      status: "play",
+      status: "pause",
     };
   },
   methods: {

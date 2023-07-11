@@ -39,6 +39,30 @@
           @dragover.prevent
           @drop="drop(`box_inventario_${n}`, `inventario`)"
         ></div>
+
+        <div v-if="valorAtual == melhorValor">
+          <div class="estrutura-ganha">
+            <div class="plano-fundo">
+              <img
+                src="/PD_AjudeSteve/img/Villager.svg"
+                alt="Villager da vitória"
+              />
+              <p class="partida-ganha texto-ganho">
+                Obrigado por ajudar Steve a escolher os melhores minérios isso
+                vai dar uma ótima troca. Claro aqui está seu
+                <img
+                  class="imagem-trigo"
+                  src="/PD_AjudeSteve/img/Trigo.svg"
+                  alt="Trigo de Troca"
+                />
+                &nbsp; 'Trigo' &nbsp;!
+              </p>
+            </div>
+            <button class="botao-ganhou partida-ganha" @click="reiniciaPartida">
+              Reiniciar Partida!
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <br />
@@ -167,6 +191,9 @@ export default defineComponent({
       });
       alert(test);
     },
+    reiniciaPartida() {
+      window.location.reload();
+    },
   },
 });
 </script>
@@ -182,8 +209,47 @@ export default defineComponent({
   height: 50px;
 }
 
+.botao-ganhou {
+  padding-top: 5px;
+  margin-top: 10px;
+}
+
+.texto-ganho {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.imagem-trigo {
+  width: 32px;
+  height: 32px;
+  padding: 2px;
+}
+.estrutura-ganha {
+  background-color: #292929;
+  position: fixed;
+  left: 30%;
+  top: 35%;
+  z-index: 5;
+  padding: 5px;
+}
+
+.plano-fundo {
+  display: flex;
+  background-image: url("@/assets/Fundo.jpg");
+  background-repeat: no-repeat;
+  flex-direction: row;
+  width: 600px;
+  height: 200px;
+  padding: 5px;
+  color: white;
+}
+
+.partida-ganha {
+  font-family: "MinecraftiaRegular";
+}
+
 .valores {
   color: white;
+  font-family: "MinecraftiaRegular";
   display: flex;
   flex-direction: column;
   display: flex;
@@ -314,6 +380,10 @@ h1 {
   font-size: 1.2em;
   line-height: 30px;
   margin-top: 0;
+}
+
+.texto {
+  font-family: "MinecraftiaRegular";
 }
 
 @media (max-width: 600px) {
