@@ -1,5 +1,5 @@
 const data = {
-  pesoMochila: 40,
+  pesoMochila: Math.floor(Math.random() * (51 - 30)) + 30,
   minerios: [
     {
       nome: "Minério de carvão",

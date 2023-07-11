@@ -1,11 +1,25 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/regras">Regras</router-link>
+    <router-link to="/"
+      ><img
+        class="livro-regras"
+        src="/PD_AjudeSteve/img/compasso.gif"
+        alt="Link para a Home"
+      />
+      <p class="texto-Menu">Home</p></router-link
+    >
+    |
+    <router-link to="/regras">
+      <img
+        src="/PD_AjudeSteve/img/livro.svg"
+        class="livro-regras"
+        alt="Livro de Regras"
+      />
+      <p class="texto-Menu">Regras</p></router-link
+    >
   </nav>
   <router-view />
 </template>
-
 <style>
 @font-face {
   font-family: "MinecraftiaRegular";
@@ -20,9 +34,12 @@
 }
 
 body {
-  background-color: var(--background-color);
+  background-image: url(../public/img/planoDeFundo.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
-  width: 100%;
+  width: 98%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +54,13 @@ body {
 }
 
 nav {
-  padding: 30px;
+  margin-top: 0;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 nav a {
@@ -52,5 +75,19 @@ nav a.router-link-exact-active {
 .img {
   width: 100% !important;
   height: 100% !important;
+}
+
+.texto-Menu {
+  font-family: "MinecraftiaRegular";
+  font-size: 10pt;
+}
+
+a {
+  text-decoration: none;
+}
+
+.livro-regras {
+  width: 30px;
+  height: 30px;
 }
 </style>
