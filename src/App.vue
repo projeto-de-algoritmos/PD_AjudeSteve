@@ -1,4 +1,5 @@
 <template>
+  <Music />
   <nav>
     <router-link to="/"
       ><img
@@ -20,6 +21,17 @@
   </nav>
   <router-view />
 </template>
+
+<script lang="ts">
+import Music from "./components/Music.vue";
+export default {
+  components: {
+    Music,
+  },
+  name: "App",
+};
+</script>
+
 <style>
 @font-face {
   font-family: "MinecraftiaRegular";
