@@ -48,4 +48,4 @@ npm run serve
 
 ou acessar pelo [link](https://projeto-de-algoritmos.github.io/PD_AjudeSteve/)
 
-[Video](https://github.com/projeto-de-algoritmos/PD_AjudeSteve/tree/main/assets)
+[Video](https://github.com/projeto-de-algoritmos/PD_AjudeSteve/tree/main/image/README) [Youtube](https://www.youtube.com/watch?v=Tv8ey1S27ZY)
